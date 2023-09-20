@@ -23,7 +23,15 @@ public class DestinataireRepository {
 	}
 
 	public void majDestinataire(Destinataire destinataireAMaj) {
-	   
+		for (Destinataire destinataire : listdestinataireEnStock) {
+            if (destinataire.getIdentifiantDestinataire() == destinataireAMaj.getIdentifiantDestinataire()) {
+                destinataire.setNom(destinataireAMaj.getNom());
+                destinataire.setAdresse(destinataireAMaj.getAdresse());
+                destinataire.setCodePostal(destinataireAMaj.getCodePostal());
+
+                break;
+            }
+        }
 	}
 
 }
